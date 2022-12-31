@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  transition: 0.3s;
+  color: #2ac3de;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body {
+  margin: auto;
+  background-color: #24283b;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  background-color: #1e202e;
+}
+footer {
+  margin-top: 20vh;
+  display: flex;
+  margin-bottom:1em;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 5em;
+}
+.scoreboard,
+.menssage {
+  font-size: 2.3em;
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.menssage {
+  font-size: 1.5em;
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
+  column-gap: 2em;
+  padding: 20px;
+}
+
+.optPlayer,
+.optComputer {
+  font-size: 6em;
+  margin: 10px;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #2d334e;
+}
+.optPlayer:hover {
+  cursor: pointer;
+  font-size: 7em;
+}
+@media (max-width: 670px) {
+  h1 {
+    font-size: 3.4em;
+  }
+  .scoreboard {
+    font-size: 1.4em;
+  }
+  .menssage {
+    font-size: 1em;
+  }
+  .optComputer,
+  .optPlayer {
+    font-size: 4em;
+  }
+  .optPlayer:hover {
+    font-size: 4.1em;
+  }
+  .Container{
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 460px) {
+  h1{
+    font-size: 2em;
+  }
+  .scoreboard {
+    font-size: 1.2em;
+  }
+  .menssage {
+    font-size: 1em;
+  }
+  .optPlayer:hover {
+    font-size: 4em;
+  }
+}
