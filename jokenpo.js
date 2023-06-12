@@ -1,84 +1,74 @@
-const buttons = document.querySelectorAll(".optPlayer");
+const buttons = document.querySelectorAll('.optPlayer');
 
+const player_point = document.querySelector('.player_point');
+const computer_point = document.querySelector('.computerpoint');
 
-const scoreBoard = document.querySelector(".scoreboard");
-const menssage = document.querySelector(".menssage");
+const option_computer = document.querySelector('.optComputer');
 
-const computerOpt = ["rock", "paper", "scissors"];
+const menssage_winner = document.querySelector('.winner');
+
+const computerOpt = ['rock', 'paper', 'scissors'];
 
 var scorePlayer = 0;
 var scoreComputer = 0;
+var winner = '';
 
-for (i = 0; i < buttons.length; i++) {
-  buttons[i].onclick = Jokenpo;
-}
+buttons.forEach((buttons) => {
+  buttons.addEventListener('click', Jokenpo);
+});
 
 function Jokenpo(e) {
   let playerChoice = e.target.value;
   let computerChoice = computerOpt[Math.floor(Math.random() * 3)];
 
-  indentChoice(computerChoice)
-  Comparasion(playerChoice, computerChoice);
-  Rounds();
-  scoreBoard.textContent = `Player ${scorePlayer} | ${scoreComputer} Computer`;
+  if (Comparasion(playerChoice, computerChoice) == 'humano') {
+    menssage_winner.innerHTML = 'Humano';
+    scorePlayer += 1;
+  } else if (Comparasion(playerChoice, computerChoice) == 'computador') {
+    menssage_winner.innerHTML = 'Computador';
+    scoreComputer += 1;
+  } else {
+    menssage_winner.innerHTML = 'Empate';
+  }
+
+  Show_ChoiceComputer(computerChoice);
+
+  player_point.innerHTML = scorePlayer;
+  computer_point.innerHTML = scoreComputer;
 }
 
 function Comparasion(playerChoice, computerChoice) {
+  // Empate
   if (computerChoice == playerChoice) {
-    menssage.textContent = "Empate";
-  } else if (computerChoice == "rock" && playerChoice == "paper") {
-    menssage.textContent = "Win";
-    scorePlayer += 1;
-  } else if (computerChoice == "paper" && playerChoice == "scissors") {
-    menssage.textContent = "Win";
-    scorePlayer += 1;
-  } else if (computerChoice == "scissors" && playerChoice == "rock") {
-    menssage.textContent = "Win";
-    scorePlayer += 1;
+    winner = 'empate';
+
+    // Possibilidades do humano ganhar
+  } else if (computerChoice == 'rock' && playerChoice == 'paper') {
+    winner = 'humano';
+  } else if (computerChoice == 'paper' && playerChoice == 'scissors') {
+    winner = 'humano';
+  } else if (computerChoice == 'scissors' && playerChoice == 'rock') {
+    winner = 'humano';
   }
-  // =================================
-  else if (computerChoice == "paper" && playerChoice == "rock") {
-    menssage.textContent = "Loste";
-    scoreComputer += 1;
-  } else if (computerChoice == "scissors" && playerChoice == "paper") {
-    menssage.textContent = "Loste";
-    scoreComputer += 1;
-  } else if (computerChoice == "rock" && playerChoice == "scissors") {
-    menssage.textContent = "Loste";
-    scoreComputer += 1;
+
+  // Possibilidades do computador ganhar
+  else if (computerChoice == 'paper' && playerChoice == 'rock') {
+    winner = 'computador';
+  } else if (computerChoice == 'scissors' && playerChoice == 'paper') {
+    winner = 'computador';
+  } else if (computerChoice == 'rock' && playerChoice == 'scissors') {
+    winner = 'computador';
   }
+
+  return winner;
 }
 
-function Rounds() {
-  if (scorePlayer == 5) {
-    menssage.textContent = "🥳 Winner , You won this round 🎉";
-    scoreComputer = 0;
-    scorePlayer = 0;
-  } else if (scoreComputer == 5) {
-    menssage.textContent = "☹️ Loser, Computer won this round 💻";
-    scoreComputer = 0;
-    scorePlayer = 0;
+function Show_ChoiceComputer(computerChoice) {
+  if (computerChoice == 'rock') {
+    option_computer.innerHTML = ' ✊ ';
+  } else if (computerChoice == 'paper') {
+    option_computer.innerHTML = ' ✋ ';
+  } else {
+    option_computer.innerHTML = ' ✌ ';
   }
-}
-
-function indentChoice(computerChoice){
-
-  let computerRock = document.querySelector("#rock");
-  let computerPaper = document.querySelector("#paper");
-  let computerScissors = document.querySelector("#scissors");
-
-  computerScissors.style.backgroundColor = "#2d334e"
-  computerRock.style.backgroundColor = "#2d334e"
-  computerPaper.style.backgroundColor = "#2d334e"
-
-  if(computerChoice == "rock"){
-    computerRock.style.backgroundColor = "#40486d"
-  }
-  else if(computerChoice == "paper"){
-    computerPaper.style.backgroundColor = "#40486d"
-  }
-  else{
-    computerScissors.style.backgroundColor = "#40486d"
-  }
-
 }

@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" type="image/x-icon">
-  <title>Jokenpo</title>
-</head>
-<body>
-  <header>
-    <h1>Rock Paper Scissors</h1>
-  </header>
-  <label for="" class="scoreboard"><b> Player  |  Computer</b></label>
-  <label for="" class="menssage">The game ends with 5 points</label>
-  
-  <div class="Container">
-    <div class="Playercontent">
-      <button class="optPlayer" value="rock">✊</button>
-      <button class="optPlayer" value="paper">✋</button>
-      <button class="optPlayer" value="scissors">✌</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <title>Jokenpo</title>
+  </head>
+  <body>
+    <div for="" class="scoreboard">
+      <span class="player_point">0</span>
+      VS
+      <span class="computerpoint">0</span>
     </div>
-    <div class="Computercontent">
-      <button class="optComputer" id="rock">✊</button>
-      <button class="optComputer" id="paper">✋</button>
-      <button class="optComputer" id="scissors">✌</button>
+
+    <div class="Container">
+      <div class="Playercontent">
+        <h3>Humano</h3>
+        <div>
+          <button class="optPlayer" value="rock">✊</button>
+          <button class="optPlayer" value="paper">✋</button>
+          <button class="optPlayer" value="scissors">✌</button>
+        </div>
+      </div>
+      <div for="" class="menssage">
+        Vencedor :<br />
+        <h1 class="winner">Computador</h1>
+      </div>
+
+      <div class="Computercontent">
+        <h3>Computador</h3>
+        <div>
+          <button class="optComputer">✊ ✋ ✌</button>
+        </div>
+      </div>
     </div>
-  </div>
-  
-  <footer><b>Crafted by <a href="https://github.com/JHenrique-m" target="_blank">JHenrique</a></b></footer>
-  <script src="jokenpo.js"></script>
-</body>
+
+    <script src="jokenpo.js"></script>
+  </body>
 </html>

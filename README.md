@@ -1,7 +1,5 @@
-# Eai  <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" height=35px>, está afim de jogar Jokenpo ?
-Nesse projeto fiz exatamente isso, que jogar ? click aqui 👇: 
+# Jokenpo
 
-https://jhenriquem.github.io/Jokenpo/
+Nesse projeto fiz o famoso jogo Jokenpo ou Pedra Papel e Tesoura , usei apenas html, css e javascript
 
-
-
+[ Live Demo ] (https://jhenriquem.github.io/Jokenpo/) :point_left:
