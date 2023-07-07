@@ -18,8 +18,8 @@ buttons.forEach((buttons) => {
 });
 
 function Jokenpo(e) {
-  let playerChoice = e.target.value;
-  let computerChoice = computerOpt[Math.floor(Math.random() * 3)];
+  let playerChoice = e.target.id;
+  let computerChoice = computerOpt[Math.floor((Math.random() * 10) % 3)];
 
   if (Comparasion(playerChoice, computerChoice) == 'humano') {
     menssage_winner.innerHTML = 'Humano';
@@ -65,10 +65,10 @@ function Comparasion(playerChoice, computerChoice) {
 
 function Show_ChoiceComputer(computerChoice) {
   if (computerChoice == 'rock') {
-    option_computer.innerHTML = ' ✊ ';
+    option_computer.innerHTML = ' <img src="imgs/pedra.png"> ';
   } else if (computerChoice == 'paper') {
-    option_computer.innerHTML = ' ✋ ';
+    option_computer.innerHTML = ' <img src="imgs/papel.png"> ';
   } else {
-    option_computer.innerHTML = ' ✌ ';
+    option_computer.innerHTML = ' <img src="imgs/tesoura.png"> ';
   }
 }
