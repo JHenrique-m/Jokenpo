@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 :root {
-  --color: #6370f2;
+  --color: #f2cb05;
+  --bg-color: #011f26;
+  --player-text-color: #34c3be;
+  --computer-text-color: #f2b138;
 }
 * {
   box-sizing: border-box;
   color: var(--color);
   transition: 0.3s;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 body {
   margin: auto;
@@ -16,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #131325;
+  background-color: var(--bg-color);
 }
 .scoreboard {
   font-size: 2.3em;
@@ -36,7 +39,9 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+.winner {
+  text-align: center;
+}
 .Container {
   width: 100%;
   display: grid;
@@ -52,10 +57,10 @@ body {
   align-items: center;
 }
 .Playercontent h3 {
-  color: #34c3be;
+  color: var(--player-text-color);
 }
 .Computercontent h3 {
-  color: #f2b138;
+  color: var(--computer-text-color);
 }
 .Playercontent > div,
 .optComputer {
